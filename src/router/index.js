@@ -1,39 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import HelloWorld from '../components/HelloWorld'
-import MyAbout from '../pages/MyAbout'
+// 引入封装好的路由数组
+import Myroutes from './routes'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'hash',
-  routes: [
-    {
-      path: '/', // 默认地址
-      redirect: '/hello' //重定向
-    },
-    {
-      path: '/hello',
-      component: HelloWorld
-    },
-    {
-      path: '/about',
-      component: MyAbout
-    }
-  ]
+  routes: Myroutes // 同名可省略，这里为了突出封装
 })
 
+// 引入封装好的钩子函数（回调，无封装()=>{}）
+import { MybeforeEach, MyafterEach } from "./shouwei"
+
 // 全局前置路由守卫
-router.beforeEach((to, from, next) => {
-  // to and from are both route objects. must call `next`.
-  console.log(to, from);
-  next()
-})
+router.beforeEach(MybeforeEach)
 // 全局后置路由守卫
-router.afterEach((to, from) => {
-  // to and from are both route objects.
-  console.log(to, from);
-})
+router.afterEach(MyafterEach)
 
 export default router
