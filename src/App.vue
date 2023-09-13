@@ -3,8 +3,8 @@
     <!-- 路由导航 -->
     <div class="router">
       <router-link class="routerGuide" to="/hello">首页</router-link>
-      <span>|</span>
       <router-link class="routerGuide" to="/about">关于</router-link>
+      <router-link class="routerGuide" to="/elm">饿了么UI</router-link>
     </div>
     <!-- 路由页面 -->
     <router-view></router-view>
