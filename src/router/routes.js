@@ -1,6 +1,7 @@
 import HelloWorld from '../components/HelloWorld'
 import MyAbout from '../pages/MyAbout'
 import ElementUI from '../pages/ElementUI'
+import MyAxios from '../pages/MyAxios'
 
 export default [
   {
@@ -18,5 +19,9 @@ export default [
   {
     path: '/elm',
     component: ElementUI
+  },
+  {
+    path: '/axios',
+    component: MyAxios
   }
 ]
