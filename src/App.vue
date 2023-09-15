@@ -6,6 +6,7 @@
       <router-link class="routerGuide" to="/about">关于</router-link>
       <router-link class="routerGuide" to="/elm">饿了么UI</router-link>
       <router-link class="routerGuide" to="/axios">axios测试</router-link>
+      <router-link class="routerGuide" to="/list">列表页</router-link>
     </div>
     <!-- 路由页面 -->
     <router-view></router-view>
