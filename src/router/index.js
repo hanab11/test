@@ -19,4 +19,5 @@ router.beforeEach(MybeforeEach)
 // 全局后置路由守卫
 router.afterEach(MyafterEach)
 
+// 暴露
 export default router
