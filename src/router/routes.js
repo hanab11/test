@@ -3,6 +3,7 @@ import MyAbout from '../pages/MyAbout'
 import ElementUI from '../pages/ElementUI'
 import MyAxios from '../pages/MyAxios'
 import MyList from '../pages/MyList'
+import MyList_fenye from '../pages/MyList_fenye'
 
 export default [
   {
@@ -28,5 +29,9 @@ export default [
   {
     path: '/list',
     component: MyList
+  },
+  {
+    path: '/fenye',
+    component: MyList_fenye
   }
 ]
