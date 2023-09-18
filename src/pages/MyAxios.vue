@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>我是axios测试页面</h1>
-    <h1 v-if="response.today">今日题目：{{ response.today[0].title }}</h1>
+    <h1 v-if="response.today">今日题目：{{ response.today[0] ? response.today[0].title : '暂未上传' }}</h1>
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
       // 调异步接口
       let promise = await getxxx(params)
       this.response = promise.result
-      console.log(this.response)
+      console.log('请求到的数据', this.response)
 
       /* try {
         this.response = await getxxx(params)
