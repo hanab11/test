@@ -2,7 +2,8 @@
   <div>
     <h1>我是列表分页页面</h1>
 
-    <!-- data : 关联的数据 prop: 关联的是一列的属性 label：关联的是表格的标题 -->
+    <!-- 现在elementUI组件中遍历是<el-table :data="xxx">，scope.row是遍历子对象、scope.$index是索引下标 -->
+    <!-- data : 关联的数据，prop: 关联的是一列的属性，label：关联的是表格的标题 -->
     <el-table :data="currentData" style="width: 100%">
       <el-table-column prop="id" label="编号" width="150"></el-table-column>
       <el-table-column prop="label" label="分类" width="150"></el-table-column>
@@ -12,7 +13,7 @@
         <!-- 作用域插槽，scope.$index是当前行的下标，scope.row是当前行的对象，可进行操作 -->
         <template slot-scope="scope">
           <el-button type="success" @click="handleEdit(scope.row)">编辑</el-button>
-          <el-button type="danger" @click="handleDelete(scope.row)">删除</el-button>
+          <el-button type="danger" @click="handleDelete(scope.row)">删除{{ scope.$index }}</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -22,9 +23,10 @@
       :page-sizes="pageSizes" :page-size="PageSize" :total="totalCount" layout="total, sizes, prev, pager, next, jumper">
     </el-pagination>
 
+    <!-- 原本vue中遍历是<li v-for="(x,index) in xxx">，x是遍历子对象、index是索引下标 -->
     <h1 v-if="response.length">类库题目（原生列表）</h1>
     <ul>
-      <li v-for="category in response" :key="category.index">{{ category.title }}</li>
+      <li v-for="(category, index) in response" :key="index">{{ index }}，{{ category.title }}</li>
     </ul>
   </div>
 </template>
